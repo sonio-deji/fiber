@@ -1,9 +1,30 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import Image from 'next/image'
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [menu, setmenu] = useState(false);
+  // const slideOut = {
+  //   hidden: {
+  //     x: "-100vw",
+  //     opacity: 0,
+  //   },
+  //   visible: {
+  //     x: '40vw',
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 0.1,
+  //       type: "spring",
+  //       damping: 20,
+  //       stiffness: 500,
+  //     }
+  //   },
+  //   exit: { 
+  //     x : "100vw",
+  //     opacity: 0
+  //   }
+  // }
   return (
     <div className=''>
       <Head>
@@ -19,44 +40,49 @@ export default function Home() {
         
       </div>
       <div className='hidden justify-between space-x-4 items-center md:flex'>
-        <p className='font-light'>Community</p>
-        <p className='font-light'>Pricing</p>
-        <p className='font-light'>Features</p>
+        <p className='font-light cursor-pointer'>Community</p>
+        <p className='font-light cursor-pointer'>Pricing</p>
+        <p className='font-light cursor-pointer'>Features</p>
       </div>
       <div className=' md:flex justify-between items-center'>
       <div className='hidden md:flex justify-between items-center space-x-4 ' >
         <h3 className='font-bold cursor-pointer'>Sign In</h3>
         <button className='border-none bg-violet-800 text-white pl-4 pr-4 pt-2 pb-2 text-center rounded-md font-medium'>Sign Up</button>
       </div>
-      <div className='md:w-0 md:overflow-hidden' onClick={() => setmenu(!menu)}>
+      <motion.div whileTap={{scale: 0.9 }} className='md:w-0 md:overflow-hidden' onClick={() => setmenu(!menu)}>
       <svg className=' cursor-pointer ' width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M24 4H0V0H24V4ZM24 8H0V12H24V8ZM24 16H0V20H24V16Z" fill="black"/>
 </svg>
 
-      </div>
+      </motion.div>
       </div>
       
     </div>
-    {menu && <div className='w-52 absolute top-0 right-0 bg-slate-100 text-right pt-6 pb-20 pr-4 transition-all h-full'>
-    <div className='float-right' onClick={() => setmenu(!menu)}>
+    {menu && <motion.div   animate={{
+    x: -9,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+  }} transition={{ type: "spring", stiffness: 90, dampness: 25 }} className='w-72 absolute top-0 right-0 bg-slate-100 text-right pt-6 pb-20 pr-4 z-10 h-full md:hidden'>
+    <motion.div className='float-right' onClick={() => setmenu(!menu)}>
       <svg className=' cursor-pointer ' width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M24 4H0V0H24V4ZM24 8H0V12H24V8ZM24 16H0V20H24V16Z" fill="black"/>
 </svg>
 
-      </div>
-        <p className='font-light pt-10'>Community</p>
-        <p className='font-light pt-3'>Pricing</p>
-        <p className='font-light pt-3'>Features</p>
-        <div className='pt-10' >
+      </motion.div>
+        <motion.p  className='font-light pt-10 cursor-pointer'>Community</motion.p>
+        <motion.p className='font-light pt-3 cursor-pointer'>Pricing</motion.p>
+        <motion.p className='font-light pt-3 cursor-pointer'>Features</motion.p>
+        <motion.div className='pt-10' >
         <h3 className='font-bold cursor-pointer'>Sign In</h3>
         <button className='border-none bg-violet-800 text-white pl-4 pr-4 pt-2 pb-2 text-center rounded-md font-medium mt-3'>Sign Up</button>
-      </div>
-    </div>}
+      </motion.div>
+    </motion.div>}
     
     <div className='md:mt-28 flex items-center '>
-      <div className='md:flex flex-row-reverse items-center'>
-        <div>
-        <Image src="/Assets/hero-illustration.png" alt="jh" className='max-w-sm md:max-w-lg block mx-auto' />
+      <div className='md:flex flex-row-reverse items-center w-full'>
+        <div className='w-full'>
+        <Image src="/Assets/hero-illustration.png" alt="jh" width='100%' height='100%' layout='responsive' />
         </div>
         <div>
         <div className='hidden md:flex space-x-3 items-center'>
@@ -152,7 +178,10 @@ export default function Home() {
         </div>
         
       </div>
-      <Image src="/Assets/page image.png" alt="" className='block mx-auto pt-10 h-auto w-full' />
+      <div className='w-full pt-6 md:pt-0'>
+      <Image src="/Assets/page image.png" alt="" width='100%' height='80%' layout='responsive' />
+      </div>
+      
     </div>
     </div>
     
@@ -182,7 +211,7 @@ export default function Home() {
         <p className='font-light text-sm h-28'>I only just started freelancing this year and i have already made more than i evr did in my full-time job. Templates are so amazing</p>
         <div className='w-70 border border-gray-200 text-violet-800 font-semibold text-center p-2'>View Janice&apos;s Portfolio</div>
       </div>
-    </div>
+    </div> 
     </div>
     
     <div className='mt-28 bg-slate-300'>
