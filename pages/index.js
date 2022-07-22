@@ -43,7 +43,7 @@ export default function Home() {
     y: 0,
     scale: 1,
     rotate: 0,
-  }} transition={{ type: "spring", stiffness: 90, dampness: 25 }} className='w-72 sticky top-0 right-0 bg-slate-100 text-right pt-6 pb-20 pr-4 z-10 h-full md:hidden'>
+  }} transition={{ type: "spring", stiffness: 90, dampness: 25 }} className='w-72 static top-0 right-0 bg-slate-100 text-right pt-6 pb-20 pr-4 z-10 h-full md:hidden'>
     <motion.div className='float-right' whileTap={{scale: 0.9 }} onClick={() => setmenu(!menu)}>
       <svg className=' cursor-pointer ' width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M24 4H0V0H24V4ZM24 8H0V12H24V8ZM24 16H0V20H24V16Z" fill="black"/>
