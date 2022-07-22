@@ -166,8 +166,8 @@ export default function Home() {
     </div>
     
     <div className='max-w-screen-lg mx-auto p-5'>
-    <div className='flex justify-between items-center space-x-2 mt-20 flex-col md:flex-row'>
-      <div className='border-gray-200 border p-4 h-60'>
+    <div className='flex justify-between items-center md:space-x-2 mt-20 flex-col md:flex-row'>
+      <div className='border-gray-200 border p-3'>
         <div className='font-semibold text-left '>
           <p className='text-violet-800'>Sarah Andrews</p>
           <p className='font-normal'>$100k in revenue</p>
@@ -175,15 +175,15 @@ export default function Home() {
         <p className='font-light text-sm h-28'>Setting up my portfolio with Fiber took no more than 10 minutes. Since then, my portfolio has attracted a lot of clients and made me more than $100k</p>
         <div className='w-70 border border-gray-200 text-violet-800 font-semibold text-center p-2'>View Sarah&apos;s Portfolio</div>
       </div>
-      <div className='border-gray-200 border p-4 h-60'>
+      <div className='border-gray-200 border p-3 w-full mt-6 md:mt-0'>
         <div className='font-semibold text-left '>
           <p className='text-violet-800'>Mathew Higgins</p>
           <p className='font-normal'>$20k in revenue</p>
         </div>
         <p className='font-light text-sm h-28'>I have been getting A LOT of leads ever since i used Fiber&apos;s premade templated, now i just need to work on my case studies and i&apos;ll be ready to go</p>
-        <div className='w-70 border border-gray-200 text-violet-800 font-semibold text-center p-2'>View Higgims&apos;s Portfolio</div>
+        <div className='w-70 border border-gray-200 text-violet-800 font-semibold text-center p-2 flex-nowrap'>View Higgins&apos;s Portfolio</div>
       </div>
-      <div className='border-gray-200 border p-4 h-60'>
+      <div className='border-gray-200 border w-full p-3 mt-6 md:mt-0'>
         <div className='font-semibold text-left '>
           <p className='text-violet-800'>Janice Dave</p>
           <p className='font-normal'>$30k in revenue</p>
