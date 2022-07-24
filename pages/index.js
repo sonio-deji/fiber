@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   const [menu, setmenu] = useState(false);
@@ -27,7 +28,9 @@ export default function Home() {
       <div className=' md:flex justify-between items-center'>
       <div className='hidden md:flex justify-between items-center space-x-4 ' >
         <h3 className='font-bold cursor-pointer'>Sign In</h3>
-        <button className='border-none bg-violet-800 text-white pl-4 pr-4 pt-2 pb-2 text-center rounded-md font-medium'>Sign Up</button>
+        <p  className='border-none bg-violet-800 text-white pl-4 pr-4 pt-2 pb-2 text-center rounded-md cursor-pointer font-bold'> 
+        <Link href='/signIn'>Sign Up</Link>
+        </p>
       </div>
       <motion.div whileTap={{scale: 0.9 }} className='md:w-0 md:overflow-hidden' onClick={() => setmenu(!menu)}>
       <svg className=' cursor-pointer ' width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +58,9 @@ export default function Home() {
         <motion.p className='font-light pt-3 cursor-pointer'>Features</motion.p>
         <motion.div className='pt-10' >
         <h3 className='font-bold cursor-pointer'>Sign In</h3>
-        <button className='border-none bg-violet-800 text-white pl-4 pr-4 pt-2 pb-2 text-center rounded-md font-medium mt-3'>Sign Up</button>
+        <p  className='border-none bg-violet-800 text-white pl-4 pr-4 pt-2 pb-2 text-center rounded-md font-bold cursor-pointer mt-3 w-1/2 float-right'> 
+        <Link href='/signIn'>Sign Up</Link>
+        </p>
       </motion.div>
     </motion.div>}
     
