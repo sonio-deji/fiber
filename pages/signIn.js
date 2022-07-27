@@ -3,7 +3,7 @@ import Image from 'next/image'
 import '../styles/Home.module.css'
 import { useState } from 'react'
 
-const signIn = () => {
+export default function signIn () {
     const [passwordType, setpasswordType] = useState('password');
     const pass = () => {
         passwordType === 'password' ? setpasswordType('text') : setpasswordType('password')
@@ -56,4 +56,3 @@ const signIn = () => {
     </div>
 }
 
-export default signIn
